@@ -29,7 +29,7 @@ categories: Django
 
 #### Django Tmeplate 문법
 
-- {% %} 사용
+- `{% raw %}{% %}{% endraw %}` 사용
 
   ```html
   {% raw %}
