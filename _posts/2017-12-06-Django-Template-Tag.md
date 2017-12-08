@@ -33,10 +33,53 @@ categories: Django
 
   ```html
   {% raw %}
-  {% extends "test.html" %}
-  {% for u in users %}
-  {% endfor %}			<!-- 구문의 끝 표기 해주어야 함-->
+  {% extends "test.html" %}	<!-- Django Template Tage // 필요한 인자 -->
+  	{% for u in users %}
+  		...
+  	{% endfor %}			<!-- 일부 문법의 경우 구문의 끝 표기 해주어야 함-->
   {% endraw %}
   ```
 
 - 파이썬 로직 사용 불가 템플릿 렌더링 전에 필요한 값을 인자로 전달받음( View -> Template )
+
+- 인자를 넘길때는 `()과 쉼표,`를 사용하지 않을뿐 파이썬의 안자 넘기는 형식과 유사하다(positional argument, keyword arguments)
+
+
+
+#### 변수 사용
+
+```html
+{% raw %}
+{{ val_name }}			<!-- 변수 이름으로 사용 -->
+{{ dic.key }}			<!-- = dic['key'}-->
+{{ object.attr }}
+{{ object.function}}	<!-- 인자없는 함수 사용 가능(callable) -->
+{{ list.0 }}			<!-- list의 index로 사용 가능 = list(0)-->
+{% endraw %}
+```
+
+
+
+#### Django Template Tag
+
+- Dajgno Template용 Tag
+
+- `{% raw %} {% %} {% endraw %}` 하나만 쓰기도 하고 `{% raw %}{% for i in range(10) %}{% endif %}{% endraw %}`처럼 2개 이상으로 쓰이기도 한다
+
+- [내장 Tag](https://docs.djangoproject.com/ko/1.11/ref/templates/builtins/)가 존재하며 별로 커스텀 Tag 추가 가능
+
+- comment tage및 `#` 을 이용해 주석 처리 가능
+
+  ```html
+  {% raw %}
+  {# 주석1 #}
+  {% comment "주석에 대한 설명(달지 않아도 됨)" %}
+  	주석2
+  	주석3
+  	주석4
+  {% endcomment %}
+  {% endraw %}
+  ```
+
+  - Server단의 주석임 Client단에서의 javascript의 주석`/**/`이나 html 주석`<!-- -->`과 다름
+
