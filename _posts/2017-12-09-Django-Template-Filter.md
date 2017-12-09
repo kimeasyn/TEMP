@@ -10,7 +10,7 @@ categories: Django
 
 - 템플릿 변수값 변환을 위한 함수이며, `|` (파이프)를 이용하여 다수 필터 함수를 연결 할 수 있다.(chaining)
 
-  `{{var|filter1}} {{var|filter2:arg}}{{var|filter2:arg|filter3}} `
+  `{% raw %}{{var|filter1}} {{var|filter2:arg}}{{var|filter2:arg|filter3}}{% endraw %} `
 
 - 빌트인 Filter가 지원되며 app별로 custom filter 추가 가능
 
@@ -24,17 +24,16 @@ categories: Django
 
   ```html
   {% raw %}{{ datetime_object|date: "D d M Y"}}			<!-- Sat 09 12 2017 -->
-  {{ datetime_object|date: "DATE_FORMAT"}}		<!-- 기본값 Dec.09, 2017 5 p.m -->
-  {{ datetime_object|date: "DATETIME_FORMAT"}}	<!-- 12/09/2017 -->
-  {{ datetime_object|date: "SHORT_DATE_FORMAT"}}	<!-- 12/09/2017 5 p.m -->
-  {{ datetime_object|time: "TIME_FORMAT"}}		<!-- 5 p.m -->
-  {% endraw %}
+  {{ datetime_object|date: "DATE_FORMAT"}}				<!-- 기본값 Dec.09, 2017 5 p.m -->
+  {{ datetime_object|date: "DATETIME_FORMAT"}}			<!-- 12/09/2017 -->
+  {{ datetime_object|date: "SHORT_DATE_FORMAT"}}			<!-- 12/09/2017 5 p.m -->
+  {{ datetime_object|time: "TIME_FORMAT"}}				<!-- 5 p.m -->{% endraw %}
   ```
 
 - 시간차 표현 포맷 지정
 
   ```html
-  {% raw %}{{ past_date|timesince}}						<!-- 현재시간 기준 now - past_date -->
+  {% raw %}{{ past_date|timesince}}				<!-- 현재시간 기준 now - past_date -->
   {{ past_date|timesince:criteria_dt}}			<!-- 기준시간 기준criteria_dt - past_date -->
   {{ future_date|timeuntil}}						<!-- 현재시간 기준 future_date - now -->
   {{ future_date|timeuntil:past_dt}}				<!-- 기준시간 기준 future_date - past_date -->{% endraw %}
@@ -56,7 +55,7 @@ categories: Django
 
   ```html
   {% raw %}{{value|default:"nothing"}}
-  {{value|default_if_none:"nothing"}}		<!-- value가 False가 아니고 None 일때만 해당 -->{% endraw %}
+  {{value|default_if_none:"nothing"}}		<!-- value가 False가 아니고 none 일때만 해당 -->{% endraw %}
   ```
 
 
