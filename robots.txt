@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: http://kimeasyn.github.io/sitemap.xml
