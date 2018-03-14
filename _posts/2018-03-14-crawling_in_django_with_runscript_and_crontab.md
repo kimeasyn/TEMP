@@ -1,4 +1,3 @@
-```
 ---
 layout: post
 title:  "Django 프로젝트에서 크롤링 스크립트를 django-extensions & crontab 으로 실행하기기기기"
@@ -6,7 +5,6 @@ date: 2018-03-14
 categories: Django
 comments: true
 ---
-```
 
 #### Django 프로젝트에서 크롤링 스크립트를 django-extensions & crontab으로 실행하기
    > 장고 프로젝트에서 주기적으로 크롤링 데이터를 활용하면서 좀더 편리하게 작업하기 위한 과정을 설명해놓은 포스트입니다. django, BeautifulSoup, django-extensions runscript, crontab 등 각 키워드들에 대한 설명은 간략하게 넘어가겠습니다.
