@@ -16,12 +16,9 @@ layout: default
 <ul class="post-list">
   {% for post in paginator.posts %}
   <li>
-    <h2>
+    <h3>
       <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </h2>
-    <section class="post-excerpt" itemprop="description">
-      <p>{{ post.content | truncatewords: 50 }}</p>
-    </section>
+    </h3>
     <section class="post-meta">
       <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
       <div class="post-categories">
