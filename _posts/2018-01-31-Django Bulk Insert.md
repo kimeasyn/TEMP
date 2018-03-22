@@ -2,7 +2,7 @@
 layout: post
 title: "Django Bulk Insert"
 comments: true
-categories: Django
+categories: Django SQL mysql
 date: 2018-01-31
 ---
 

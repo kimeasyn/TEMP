@@ -2,7 +2,7 @@
 layout: post
 title:  "Django 프로젝트에서 크롤링 스크립트를 django-extensions & crontab 으로 실행하기"
 date: 2018-03-14
-categories: Django, crawling, crontab, django-extensions, python
+categories: Django crawling crontab django-extensions python
 comments: true
 ---
 
